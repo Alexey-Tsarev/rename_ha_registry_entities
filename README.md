@@ -14,7 +14,7 @@ Home Assistant has the entities file `/config/.storage/core.entity_registry`.
 This script uses this file to find entities without IEEE and rename them using Home Assistant API.
 
 # Install
-SSH to Home Assistant host. Upload this script to `/share/rename_ha_registry_entities`
+SSH to Home Assistant host. Download and unzip the script https://github.com/Alexey-Tsarev/rename_ha_registry_entities/archive/refs/heads/master.zip to `/share/rename_ha_registry_entities` directory.
 ```
 apk add py3-virtualenv
 cd /share/rename_ha_registry_entities
