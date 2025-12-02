@@ -59,7 +59,7 @@ if TOKEN:
 with open(ENTITY_REGISTRY_FILE, "r") as f:
     data = json.load(f)
 
-changed = 0
+processed = 0
 
 for ent in data["data"]["entities"]:
     unique_id = ent.get("unique_id", "")
@@ -99,8 +99,8 @@ for ent in data["data"]["entities"]:
         if TOKEN:
             asyncio.run(ws_api_rename_entity(entity_id, new_entity_id))
 
-        changed += 1
+        processed += 1
 
     print()
 
-print(f"Processed entities: {changed}")
+print(f"Processed entities: {processed}")
