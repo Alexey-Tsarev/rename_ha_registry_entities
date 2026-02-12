@@ -13,23 +13,11 @@ sensor.manipulator_hall_linkquality -> sensor.0x00124b0035670bcb_linkquality
 Home Assistant has the entities file `/config/.storage/core.entity_registry`.
 This script uses this file to find entities without IEEE and rename them using Home Assistant API.
 
-# Install
+# Install and Dry Run
 SSH to Home Assistant host. Download and unzip the script https://github.com/Alexey-Tsarev/rename_ha_registry_entities/archive/refs/heads/master.zip to `/share/rename_ha_registry_entities` directory.
 ```
-apk add py3-virtualenv
+apk add coreutils-env uv
 cd /share/rename_ha_registry_entities
-virtualenv .venv
-. .venv/bin/activate
-pip3 install -r requirements.txt
-```
-
-# Run
-```
-cd /share/rename_ha_registry_entities
-. .venv/bin/activate
-```
-## Dry Run
-```
 ./rename_ha_registry_entities.py
 ```
 ```
@@ -69,7 +57,6 @@ sensor.finger_bot_last_seen -> sensor.0xa4c138b8b9fe6983_last_seen
 Due to the script uses Home Assistant API, you need to provide a token from this page: http://homeassistant.local:8123/profile/security
 ```
 cd /share/rename_ha_registry_entities
-. .venv/bin/activate
 TOKEN=<TOKEN> ./rename_ha_registry_entities.py
 ```
 ```
